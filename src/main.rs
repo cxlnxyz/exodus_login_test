@@ -10,7 +10,7 @@ fn main() {
     let list_users = list_users.trim().to_lowercase();
 
     let mut command = Command::new("powershell");
-    command.arg("-File").arg("check_ad_login.ps1");
+    command.arg("-ExecutionPolicy").arg("Bypass").arg("-File").arg("check_ad_login.ps1");
 
     if list_users == "yes" {
         command.arg("-listUsers");
