@@ -36,6 +36,6 @@ fn main() {
     if output.status.success() {
         println!("{}", String::from_utf8_lossy(&output.stdout));
     } else {
-        println!("Operation failed");
+        eprintln!("Operation failed: {}", String::from_utf8_lossy(&output.stderr));
     }
 }
